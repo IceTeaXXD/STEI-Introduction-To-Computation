@@ -1,0 +1,39 @@
+# NIM : 16521516
+
+# Nama : Ahmad Nadil
+
+# Deskripsi : Perkiraan penduduk
+
+
+
+# KAMUS
+
+SET # x TO integer
+
+
+
+#ALGORITMA
+
+#INPUT
+
+SET x TO int(INPUT("Masukkan nilai x: "))
+
+SET Po TO 1200000
+
+SET k TO 0.015
+
+SET e TO 1
+
+
+
+# Looping untuk menghitung faktorial
+
+FOR i IN range(1, 101):
+
+    SET penyebut TO 1
+
+    FOR j IN range(1, i):
+
+        penyebut *= i
+
+    e += 1 / penyebut

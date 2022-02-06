@@ -1,0 +1,51 @@
+# NIM : 16521516
+
+# Nama : Ahmad Nadil
+
+# Deskripsi : Penentuan Golongan Darah Anak
+
+
+
+# KAMUS
+
+SET # Ix, Iy TO String
+
+
+
+# ALGORITMA
+
+#INPUT
+
+SET Ix TO INPUT('Masukkan Ix Anak (IA/IO/IB) : ')
+
+SET Iy TO INPUT('Masukkan Iy Anak (IA/IO/IB) : ')
+
+
+
+#PERCABANGAN
+
+IF Ix EQUALS 'IA':
+
+    IF Iy EQUALS 'IA':
+
+        OUTPUT ('Golongan Darah Anak : A')
+
+    ELSEIF Iy EQUALS 'IB':
+
+        OUTPUT ('Golongan Darah Anak : AB')
+
+    ELSEIF Iy EQUALS 'IO':
+
+        OUTPUT ('Golongan Darah Anak : A')
+
+
+
+ELSEIF Ix EQUALS 'IB' and (Iy EQUALS 'IB' or Iy EQUALS 'IO'):
+
+    OUTPUT ('Golongan Darah Anak : B')
+
+
+
+ELSEIF Ix EQUALS 'IO' and Iy EQUALS 'IO':
+
+    OUTPUT ('Golongan Darah Anak : B')

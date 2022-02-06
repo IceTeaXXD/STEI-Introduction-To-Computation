@@ -1,0 +1,39 @@
+# NIM : 16521516
+
+# Nama : Ahmad Nadil
+
+# Deskripsi : Perhitungan F(x)
+
+
+
+# KAMUS
+
+SET # a,b,x TO float
+
+SET # n TO integer
+
+
+
+#ALGORITMA
+
+#INPUT
+
+SET a TO float(INPUT('Nilai a : '))
+
+SET b TO float(INPUT('Nilai b : '))
+
+SET x TO float(INPUT('Nilai x : '))
+
+SET n TO int(INPUT('Nilai n : '))
+
+SET hasil TO 0
+
+FOR i IN range (1,n+1):
+
+    SET rumus TO a*(x**i) + b
+
+    SET hasil TO hasil + rumus
+
+
+
+OUTPUT('Hasil Akhir : ' + str(hasil))

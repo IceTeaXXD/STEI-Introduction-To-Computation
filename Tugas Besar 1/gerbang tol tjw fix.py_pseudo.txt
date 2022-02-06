@@ -1,0 +1,100 @@
+IMPORT time
+
+
+
+SET gerbangTol TO ['Merak','Cikupa','Jakarta Outer Ring Road','Cikampek','Palimanan','Kanci','Pejagan','Pemalang','Batang','Semarang (Kalikangkung)',
+
+'Semarang ABC','Solo','Ngawi','Kertosono','Mojokerto','Surabaya','Gempol','Pasuruan','Probolinggo Timur']
+
+SET hargaTol TO [44000,7500,15000,15000,107500,12000,29000,57500,39000,75000,5000,65000,91000,88000,49000,38000,4500,36000,26500]
+
+total=0
+
+
+
+DEFINE FUNCTION harga_total(masuk,keluar):
+
+    HargaAkhir=0
+
+    IF Masuk < Keluar :
+
+        FOR har IN range(Masuk-1,Keluar-1):
+
+            HargaAkhir += hargaTol[har]
+
+    ELSEIF Masuk > Keluar : 
+
+        FOR har IN range (Keluar-1,Masuk-1):
+
+            HargaAkhir += hargaTol[har]
+
+    RETURN HargaAkhir
+
+
+
+DEFINE FUNCTION opening():
+
+    OUTPUT('---------------\nSELAMAT DATANG DI GERBANG TOL TRANSJAWA\n---------------')
+
+    time.sleep (0.5)
+
+    OUTPUT('LIST GERBANG TOL')
+
+    time.sleep (0.2)
+
+    OUTPUT(" ")
+
+    nomorGerbang=1
+
+    FOR i IN gerbangTol:
+
+        OUTPUT(nomorGerbang,':',i)
+
+        nomorGerbang += 1
+
+        time.sleep(0.07)
+
+
+
+DEFINE FUNCTION gerbang(total_harga,saldo):
+
+    IF saldo > total_harga:
+
+        OUTPUT('PEMBAYARAN BERHASIL')
+
+        SET saldo TO saldo - total_harga
+
+        time.sleep(0.3)
+
+        OUTPUT('SISA SALDO ANDA : Rp.',saldo)
+
+        time.sleep(0.3)
+
+        OUTPUT('GERBANG TERBUKA\nSILAHKAN JALAN')
+
+    else : 
+
+        time.sleep(0.3)
+
+        OUTPUT('SALDO TIDAK MENCUKUPI\nSEGERA HUBUNGI PETUGAS')
+
+
+
+opening()
+
+SET Masuk TO int(INPUT('Masukkan Nomor Gerbang Masuk : '))
+
+SET Keluar TO int(INPUT('Masukkan Nomor Gerbang Keluar : '))
+
+IF Masuk<1 or Keluar>19:
+
+    OUTPUT('INPUT tidak valid')
+
+SET Saldo TO int(INPUT('Masukkan Saldo anda (Rp) : '))
+
+Total=harga_total(Masuk,Keluar)
+
+gerbang(Total,Saldo)
+
+
+

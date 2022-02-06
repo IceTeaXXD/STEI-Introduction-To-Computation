@@ -1,0 +1,41 @@
+# NIM : 16521516
+
+# Nama : Ahmad Nadil
+
+# Deskripsi : Menghitung Nilai Rata-Rata Mahasiswa
+
+
+
+# KAMUS
+
+SET # NA, NB, NC, ND, NE TO integer
+
+
+
+#Algoritma
+
+
+
+#INPUT
+
+SET NA TO int(INPUT('Banyaknya SKS mata kuliah yang mendapat nilai A : '))
+
+SET NB TO int(INPUT('Banyaknya SKS mata kuliah yang mendapat nilai B : '))
+
+SET NC TO int(INPUT('Banyaknya SKS mata kuliah yang mendapat nilai C : '))
+
+SET ND TO int(INPUT('Banyaknya SKS mata kuliah yang mendapat nilai D : '))
+
+SET NE TO int(INPUT('Banyaknya SKS mata kuliah yang mendapat nilai E : '))
+
+
+
+#RUMUS 
+
+SET NR TO ((NA*4) + (NB*3) + (NC*2) + (ND)) / (NA + NB + NC + ND + NE)
+
+
+
+#OUTPUT 
+
+OUTPUT('Nilai Rata-Rata Mahasiswa :',NR)
