@@ -1,11 +1,3 @@
-""" Jam = int(input('Masukkan jam kepergian : '))
-Menit = int(input('Masukkan menit kepergian : '))
-Lama = int(input('Masukkan lama penerbangan (menit) :'))
-Perbedaan = int(input('Masukkan perbedaan waktu(menit) : '))
-
-if Lama >= 60:
-print('Waktu kedatangan Tuan Kil di Negara Peng adalah ', jam) """
-
 jam = int(input("Masukkan jam kepergian: "))
 menit = int(input("Masukkan menit kepergian: "))
 lama = int(input("Masukkan lama penerbangan (menit): "))
